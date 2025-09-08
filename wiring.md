@@ -1,13 +1,13 @@
 # Wiring
 Wiring Diagram:
-```{image} ../images/wiring-diagram.png
+```{image} ./images/wiring-diagram.png
 :alt: Controller wiring diagram
 :class: bg-primary mb-1
 :width: 1000px
 :align: left
 ```
 
-```{image} ../images/wiring-photo.jpg
+```{image} ./images/wiring-photo.jpg
 :alt: Controller wiring
 :class: bg-primary mb-1
 :width: 1000px
@@ -16,7 +16,7 @@ Wiring Diagram:
 
 
 Wiring Table:
-```{image} ../images/wiring-table.png
+```{image} ./images/wiring-table.png
 :alt: Controller UI and UO table
 :class: bg-primary mb-1
 :width: 600px
