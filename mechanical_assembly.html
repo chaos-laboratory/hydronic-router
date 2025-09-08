@@ -1,0 +1,762 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Mechanical Assembly &amp; Troubleshooting &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'mechanical_assembly';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Wiring" href="wiring.html" />
+    <link rel="prev" title="System Overview" href="system_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Hydronic Router
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="system_overview.html">System Overview</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mechanical Assembly &amp; Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiring.html">Wiring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sedona.html">Sedona/EasyIO</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmechanical_assembly.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/mechanical_assembly.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Mechanical Assembly & Troubleshooting</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chiller-chilled-water-tank">Chiller &amp; Chilled Water Tank</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pump">Pump</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Instructions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Troubleshooting:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manifold">Manifold</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Instructions:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zone-valve-flow-meter-assembly">Zone Valve/Flow Meter Assembly</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Instructions:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temp-sensor-assembly">Temp Sensor Assembly</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Instructions:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="mechanical-assembly-troubleshooting">
+<h1>Mechanical Assembly &amp; Troubleshooting<a class="headerlink" href="#mechanical-assembly-troubleshooting" title="Link to this heading">#</a></h1>
+<section id="chiller-chilled-water-tank">
+<h2>Chiller &amp; Chilled Water Tank<a class="headerlink" href="#chiller-chilled-water-tank" title="Link to this heading">#</a></h2>
+<section id="components">
+<h3>Components:<a class="headerlink" href="#components" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>1 - Chiller</p></li>
+<li><p>1 - Chilled water tank (55 qt. cooler with hose-compatible drainage spout)</p></li>
+<li><p>1 - External chiller pump</p></li>
+<li><p>1 - Submersible booster pump</p></li>
+<li><p>3 - Insulated hoses for chiller (2 long, 1 short)</p></li>
+<li><p>2 - ¾” GHT female x ½” barbed hose fittings</p></li>
+<li><p>1 - ½” GHT female x ½” barbed hose fitting</p></li>
+</ul>
+</section>
+<section id="instructions">
+<h3>Instructions:<a class="headerlink" href="#instructions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Install the external chiller pump on the side of the chiller using the attached bracket and screws.</p></li>
+<li><p>Assemble the short insulated hose with the ½” GHT female x ½” barbed fitting in one end and a ¾” GHT female x ½” barbed fitting in the other. Screw the ½” fitting onto the outlet of the external pump and screw the ¾” fitting onto the inlet of the chiller (the center-most port on top).</p></li>
+<li><p>Assemble one of the long insulated hoses with a ¾” GHT female x ½” barbed fitting in one end and the other end bare. Screw the ¾” fitting onto the outlet of the chiller (the outer-most port on top) and push the bare end through one of the small holes on top of the chilled water tank, preferably the one closest to the built-in drainage spout.</p></li>
+<li><p>Push the electrical plug for the submersible booster pump through the large hole on top of the chilled water tank (from inside to outside). Place the submersible pump underneath one of the small holes on top of the chilled water tank, preferably the one furthest from the built-in drainage spout and secure it to the bottom with the attached suction cups.</p></li>
+<li><p>The second long insulated hose should have two bare ends. Push one end through the small hole on top of the chilled water tank above the submersible pump and push it onto the submersible pump outlet. Push the other end onto the barbed inlet of the filter/external chiller pump.</p></li>
+<li><p>Plug the external chiller pump power cord into the barrel-jack on the back of the chiller. Plug both the chiller and submersible booster pump power cords into 120-V sockets.</p></li>
+<li><p>The submersible pump will begin working as soon as it’s plugged in. Turn the chiller and external pump on using the switch on the back of the chiller and set the temperature using the screen.</p></li>
+</ul>
+</section>
+<section id="troubleshooting">
+<h3>Troubleshooting:<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h3>
+<p>Some reasons the chiller system might not be working:</p>
+<ul class="simple">
+<li><p>The external pump inlet and outlet have been mixed up. The inlet hose (the one coming from the submersible pump) should be installed on the barb on the filter, as the filter is pre-installed on the inlet of the external pump. The outlet hose should be screwed onto the threaded fitting on the pump which faces 90° to the pump body.</p></li>
+<li><p>The water level in the cooler isn’t high enough. The chilled water tank level should be higher than the top of the filter, because the filter fills with water under gravity to help prime the pump. The submersible booster pump should also help prime the external pump.</p></li>
+<li><p>The booster pump isn’t working properly. The external pump won’t pump water continuously on its own so make sure the submersible booster pump is a. plugged in and b. its hose connections haven’t been pulled out inside the cooler.</p></li>
+</ul>
+</section>
+</section>
+<section id="pump">
+<h2>Pump<a class="headerlink" href="#pump" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Components:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>1 - Circulator pump</p></li>
+<li><p>1 - Check valve, ¾” NPT female</p></li>
+<li><p>1 - Plywood, at least 12” x 10”</p></li>
+<li><p>2 - Wooden wedges, at least 6” long</p></li>
+<li><p>~14” - ¾” ID flexible PVC tubing</p></li>
+<li><p>1 - 2-way garden hose splitter, ¾” GHT female inlet and ¾” GHT male outlets</p></li>
+<li><p>1 - ¾” GHT male x ¾” barbed hose fitting</p></li>
+<li><p>2 - ¾” NPT male x ¾” barbed hose fitting</p></li>
+<li><p>1 - ¾” NPT male-male adapter</p></li>
+<li><p>2 - Flange to ¾” NPT female adapters</p></li>
+<li><p>2 - Flat rubber gaskets</p></li>
+<li><p>4 - ⅝” bolts, at least 1 ¾” long</p></li>
+<li><p>4 - 11⁄16” nuts</p></li>
+<li><p>4 - Wood screws, at least 1 ¼” long</p></li>
+<li><p>2 - 1 ¼”+ hose clamps</p></li>
+<li><p>5-6 - Zip ties</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Instructions:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Place the gaskets between the pump flanges and the flange to ¾” NPT female adapters. Use the ⅝” bolts and 11⁄16” nuts to secure the adapters onto the pump. Screw one of the ¾” NPT male x ¾” barbed fittings into the pump inlet, and screw the ¾” NPT male-male adapter into the pump outlet.</p></li>
+<li><p>Place the pump on the plywood where it should be mounted and mark 4 hole locations around the main body. Drill these holes with a large bit. Use the wood screws to attach the wedges to one side of the plywood such that it will stand vertically.</p></li>
+<li><p>Lay the pump on the same side of the plywood as the wedges and use the zip ties to secure it, connecting 2-3 zip ties for each loop through 2 of the holes.</p></li>
+<li><p>Screw the 2-way garden hose splitter onto the cooler. Screw the ¾” GHT male x ¾” barbed hose fitting onto the side of the splitter closest to the pump. Connect the barbed fittings on the cooler and pump inlet with ~14” of ¾” ID flexible PVC tubing and 2 of the 1 ¼”+ hose clamps.</p></li>
+<li><p>Ensure the correct orientation of the check valve and screw it onto the male-male adapter on the pump outlet. Screw the second ¾” NPT male x ¾” barbed fitting onto the check valve outlet.</p></li>
+<li><p>The pump screen will turn on when connected to a 120V power source. Use the arrow button to cycle through pump settings, including 2-10 VDC input.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Troubleshooting:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Some reasons the pump might not be working:</p>
+<ul class="simple">
+<li><p>The pump isn’t primed. Make sure the water level in the tank is higher than the top of the pump, and lay the pump assembly flat while it starts pumping to help prime it with gravity. Once the air is pushed out of the system there shouldn’t be any issues with priming.</p></li>
+<li><p>The controller is using a 0-10V signal instead of a 4-20 mA signal. Though the pump input is nominally supposed to be a voltage signal, the pump has a 500 ohm resistor pre-installed which drives the current from the controller higher than is allowed, which will prevent you from driving the pump speed to the top of its range. The resistor lets you use the 4-20 mA signal exactly as a 2-10V signal instead.</p></li>
+</ul>
+</section>
+</section>
+<section id="manifold">
+<h2>Manifold<a class="headerlink" href="#manifold" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>Components:<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>1 - 4-loop inlet manifold (red visual flowmeters)</p></li>
+<li><p>1 - 4-loop outlet manifold (white manual valves)</p></li>
+<li><p>2 - Ball valves</p></li>
+<li><p>2 - Drain valves</p></li>
+<li><p>2 - Visual temp. gauges</p></li>
+<li><p>2 - Thermowells for temp. gauges</p></li>
+<li><p>2 - ¾” NPT Female x 1” NPT Male adapters</p></li>
+<li><p>1 - ¾” NPT Male x ¾” barbed hose fitting</p></li>
+<li><p>2 - Mounting brackets</p></li>
+<li><p>4 - Omega-shaped clamps for bracket</p></li>
+<li><p>4 - Rubber inserts</p></li>
+<li><p>8 - Screws for assembling manifold/bracket</p></li>
+<li><p>4 - Bolts for mounting bracket</p></li>
+<li><p>4 - Washers for mounting bracket</p></li>
+<li><p>4 - Hex nuts for mounting bracket</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>Instructions:<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Screw the thermowells into the threaded hole in the inlet/outlet ball valves. Push the temp. gauges into the thermowells. Picture: Manifold_1</p></li>
+<li><p>Screw the ¾” NPT Female x 1” NPT Male adapters into the 1” NPT Female inlets of the ball valves. Screw the ball valves onto the manifold inlet/outlet, matching blue with the inlet manifold and red with the outlet manifold. Screw the drain valves onto the ends of the manifolds. Picture: Manifold_2</p></li>
+<li><p>Screw the ¾” NPT Male x ¾” barbed hose fitting into the adapter on the outlet ball valve of the manifold. Picture: Manifold_4</p></li>
+<li><p>Push the rubber inserts onto the mounting brackets and place the brackets on the table the right distance apart for attaching the manifolds. Place the outlet manifold over the raised ends of the brackets, resting on an object of the same height (2 caliper boxes stacked works well). Screw the omega-shaped clamps onto the brackets over the ends of the manifold with the provided screws. Repeat with the inlet manifold on the lower ends of the brackets. Picture: Manifold_3 *include note that outlet and inlet are swapped</p></li>
+<li><p>Drill 4 holes in the plywood on the chamber and use the bolts, washers, and hex nuts to secure the manifold brackets to the wood.</p></li>
+<li><p>Turn the white valves on the outlet manifold in the directions indicated to open and close individual loops. Pop the red cap off of the visual flow meters on the inlet manifold with a screwdriver, and turn in the directions indicated to increase and decrease flow in individual loops.</p></li>
+</ul>
+</section>
+</section>
+<section id="zone-valve-flow-meter-assembly">
+<h2>Zone Valve/Flow Meter Assembly<a class="headerlink" href="#zone-valve-flow-meter-assembly" title="Link to this heading">#</a></h2>
+<p>This assembly is liable to leak, particularly around the flow meter because it has straight threads instead of tapered ones. Using rubber gaskets helps with this, but you should still pay special attention to tightening connections securely and being generous with the plumber’s tape.</p>
+<section id="id6">
+<h3>Components:<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>4 - Belimo zone valves</p></li>
+<li><p>4 - Flow meters</p></li>
+<li><p>4 - ½” NPT male x ½” barbed hose fittings</p></li>
+<li><p>4 - ½” NPT male x ½” BSPP female adapters</p></li>
+<li><p>4 - ½” BSPP female x ½” barbed hose fittings</p></li>
+<li><p>8 - ½” rubber gaskets (cut to size if needed)</p></li>
+<li><p>Plenty of plumber’s tape</p></li>
+<li><p>2 - 6” lengths of ½” ID x ⅝” OD flexible PVC tubing</p></li>
+<li><p>2 - 6.25” lengths of ½” ID x ⅝” OD flexible PVC tubing</p></li>
+<li><p>4 - 3D printed pipe clamps, 1.05” model</p></li>
+<li><p>4 - #8-32 x ¾” machine screws</p></li>
+<li><p>4 - #8-32 hex nuts</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>Instructions:<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Screw the ½” NPT male x ½” barbed hose fitting into the inlet end of the zone valve, i.e. the end covered by the actuator housing. Screw the male end of the ½” NPT male x ½” BSPP female adapter into the outlet end so that it’s snug but not immovable.</p></li>
+<li><p>Fit one of the rubber gaskets into the female end of the ½” NPT male x ½” BSPP female adapter so that it’s fully flush against the back lip. Apply extra plumber’s tape to both ends of the flow meter (~8 wraps should do it).</p></li>
+<li><p>Screw the flow meter into the ½” NPT male x ½” BSPP female adapter, making sure the flow direction arrow is pointing away from the zone valve. You need the zone valve and flow meter to end up vertical with respect to each other; use the leeway left on either side of the adapter to make sure the connections are tight and the components are oriented correctly. Pictures: ZV_2, ZV_3</p></li>
+<li><p>Push another rubber gasket into the ½” BSPP female x ½” barbed hose fitting and screw the fitting onto the outlet end of the flow meter. You can through the barbed end of the fitting to see whether you’ve overtightened this connection (you’ll be able to see the rubber gasket squishing out).</p></li>
+<li><p>Push the 6” and 6.25” pieces of PVC tubing onto the ½” NPT male x ½” barbed hose fittings on the zone valve inlets. The longer pieces are for the top and bottom assemblies on the manifold. These should be secure enough to not leak without hose clamps.</p></li>
+<li><p>With the manifold mounted to the chamber wall, hold the zone valve assemblies in place to space them accurately and mark where the inlet of the zone valve pipe will go. Drill 5⁄32” holes in the center of each of these markings for the pipe clamps. Screw the pipe clamps onto the plywood wall with the #8-32 x ¾” machine screws, securing with the hex nuts on the back. Picture: ZV_4</p></li>
+<li><p>Unscrew the threaded fitting from the manifold loop outlet, and place the threaded fitting on the PVC tubing attached to the zone valve, followed by the brass ferrule. Push the PVC tubing onto the manifold loop outlet and screw the threaded fitting on over the ferrule to secure the connection, tightening with a wrench.</p></li>
+<li><p>Push the inlet of the zone valve assembly onto the pipe clamp on the plywood wall. Ensure that the assemblies with the longer pieces of tubing are placed in the top and bottom spaces and repeat the connection to the manifold outlet for the other zone valve assemblies.</p></li>
+</ul>
+</section>
+</section>
+<section id="temp-sensor-assembly">
+<h2>Temp Sensor Assembly<a class="headerlink" href="#temp-sensor-assembly" title="Link to this heading">#</a></h2>
+<section id="id8">
+<h3>Components:<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>1 ft - ¾” OD copper tubing</p></li>
+<li><p>3 ft - ⅝” OD copper tubing</p></li>
+<li><p>2 - ¾” OD x ¾” NPT male compression fittings for copper</p></li>
+<li><p>8 - ⅝” OD x ½” NPT male compression fittings for copper</p></li>
+<li><p>1 - ¾” NPT female x ¾” barbed hose fitting</p></li>
+<li><p>8 - ½” NPT female x ½” barbed hose fittings</p></li>
+<li><p>5 - Belimo temp sensors</p></li>
+<li><p>5 - Zip ties</p></li>
+<li><p>2 - ~20” lengths of ⅛” x ¾” aluminum</p></li>
+<li><p>8 - 3D printed pipe clamps, 25mm model printed at 98% scale</p></li>
+<li><p>8 - #8-32 x ½” machine screws</p></li>
+<li><p>8 - #8-32 hex nuts</p></li>
+<li><p>4 - Bolts for mounting brackets</p></li>
+<li><p>4 - Washers for mounting brackets</p></li>
+<li><p>4 - Hex nuts for mounting brackets</p></li>
+<li><p>~8 ft - ½” ID x ⅝” OD flexible PVC tubing</p></li>
+<li><p>~ 2 ft - ¾” ID flexible PVC tubing</p></li>
+<li><p>2 - 1¼”+ hose clamps</p></li>
+<li><p>Insulating pipe wrap</p></li>
+</ul>
+</section>
+<section id="id9">
+<h3>Instructions:<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Cut the ⅝” OD copper tubing into 4, 8” long pieces, making sure the ends are square and clean with a file. Wash out the cut pieces push a paper towel through them to clean out any copper filings. The ¾” OD copper tubing could also be cut to 8”, although it was left at 1’ in this case.</p></li>
+<li><p>Unscrew the pieces of the ¾” OD compression fitting and place the female component on one of the ¾” OD pipes, followed by the ferrule. Picture: Temperature_1</p></li>
+<li><p>Place the male component on its end and place the pipe end into it. Screw the female component onto the male component, first to finger tight and then using two large wrenches. Once the fitting is tightened beyond the point where the components no longer wobble against each other, the pipe can be laid on its side to gain greater leverage.</p></li>
+<li><p>Test whether the fitting leaks by placing the bottom end of it against your palm and filling the pipe with water. Continue to tighten until the fitting no longer leaks; for the ¾” pipe this may require several full turns beyond finger tight, and perhaps the help of a friend.</p></li>
+<li><p>Attach the other ¾” OD compression fitting to the other end of the pipe in the same way.
+Repeat this process with the 4 pieces of ⅝” OD pipe. For the thinner pipe the fitting should only be tightened ¼ - ½ of a turn beyond the point where the components no longer wobble against each other.</p></li>
+<li><p>Screw the ¾” NPT female x ¾” barbed hose fitting onto one of the compression fittings on the ¾” OD pipe. Screw the ½” NPT female x ½” barbed hose fittings onto both ends of the ⅝” OD pipes.</p></li>
+<li><p>Form the brackets to hold the temp sensor assemblies out of the 20” lengths of ⅛” x ¾” aluminum. This thickness should allow you to clamp the aluminum to the edge of a table and bend it to 90° using a hammer. You can place pieces of rubber around the bend to prevent marks on the aluminum. Insert picture here.</p></li>
+<li><p>Mark the spacing of the assemblies on the brackets and drill a 5⁄32” holes for each pipe clamp. Drill a hole in each end of the bracket for mounting to the plywood. Screw the pipe clamps onto the brackets with the #8-32 x ½” machine screws, securing with the hex nuts on the back. Insert picture here.</p></li>
+<li><p>Drill 4 holes in the plywood on the chamber and use the bolts, washers, and hex nuts to secure the brackets to the wood, spaced so that they will snap onto the inlet and outlet of the temp sensor assemblies. Push the assemblies onto the pipe clamps.</p></li>
+<li><p>Unscrew the threaded fitting from the manifold loop inlet, and place the threaded fitting on the whole length of PVC tubing, followed by the brass ferrule. Push the PVC tubing onto the manifold loop inlet and screw the threaded fitting on over the ferrule to secure the connection, tightening with a wrench.</p></li>
+<li><p>With the manifold end secured, measure out the correct length of tubing to reach the temp sensor assembly and cut it to length. Push the ends onto the ½” barbed hose fittings on the assemblies, they should be secure enough to not leak without hose clamps.</p></li>
+<li><p>Screw the end of the free compression fitting on the ¾” OD pipe assembly into the female end of the adapter on the manifold inlet. Connect the assemby inlet to the pump outlet with the ¾” ID flexible PVC tubing and the hose clamps.</p></li>
+<li><p>Use a file to roughen the outside of the copper pipes where the spring-loaded thermistor of the Belimo temp sensors will go. Apply thermal paste to the spot and place the temp sensor on the pipe. Secure with a zip tie. Wrap the remaining exposed copper pipe with the insulating pipe wrap.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="system_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">System Overview</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="wiring.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Wiring</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chiller-chilled-water-tank">Chiller &amp; Chilled Water Tank</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components">Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pump">Pump</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Instructions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Troubleshooting:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manifold">Manifold</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Instructions:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zone-valve-flow-meter-assembly">Zone Valve/Flow Meter Assembly</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Instructions:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temp-sensor-assembly">Temp Sensor Assembly</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Components:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Instructions:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

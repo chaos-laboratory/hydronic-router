@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hydronic Router &#8212; My sample book</title>
+    <title>Wiring &#8212; My sample book</title>
   
   
   
@@ -57,12 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'wiring';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="System Overview" href="system_overview.html" />
+    <link rel="next" title="Sedona/EasyIO" href="sedona.html" />
+    <link rel="prev" title="Mechanical Assembly &amp; Troubleshooting" href="mechanical_assembly.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,7 +142,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -176,16 +173,16 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Hydronic Router
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="system_overview.html">System Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="mechanical_assembly.html">Mechanical Assembly &amp; Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wiring.html">Wiring</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Wiring</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sedona.html">Sedona/EasyIO</a></li>
 </ul>
 
@@ -258,7 +255,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fwiring.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -288,7 +285,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/wiring.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -359,7 +356,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -370,11 +369,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hydronic Router</h1>
+    <h1>Wiring</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power">Power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pump">Pump</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zone-valves">Zone Valves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temp-sensors">Temp Sensors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-meters">Flow Meters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bacnet-devices">BACNet Devices</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -384,17 +396,43 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hydronic-router">
-<h1>Hydronic Router<a class="headerlink" href="#hydronic-router" title="Link to this heading">#</a></h1>
-<p>This is a working document for the hydronic router project, to detail progress and provide information on building and using the system.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="system_overview.html">System Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mechanical_assembly.html">Mechanical Assembly &amp; Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wiring.html">Wiring</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sedona.html">Sedona/EasyIO</a></li>
-</ul>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="wiring">
+<h1>Wiring<a class="headerlink" href="#wiring" title="Link to this heading">#</a></h1>
+<p>Wiring Diagram:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../images/wiring-diagram.png"><img alt="Controller wiring diagram" class="bg-primary mb-1 align-left" src="../images/wiring-diagram.png" style="width: 1000px;" />
+</a>
+<a class="bg-primary mb-1 reference internal image-reference" href="../images/wiring-photo.jpg"><img alt="Controller wiring" class="bg-primary mb-1 align-left" src="../images/wiring-photo.jpg" style="width: 1000px;" />
+</a>
+<p>Wiring Table:</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="../images/wiring-table.png"><img alt="Controller UI and UO table" class="bg-primary mb-1 align-left" src="../images/wiring-table.png" style="width: 600px;" />
+</a>
+<section id="power">
+<h2>Power<a class="headerlink" href="#power" title="Link to this heading">#</a></h2>
+<p>The red and black terminal blocks are connected to live 24VDC power and ground, respectively. These are then connected to the controller and any components that need power.</p>
+</section>
+<section id="pump">
+<h2>Pump<a class="headerlink" href="#pump" title="Link to this heading">#</a></h2>
+<p>The pump is connected to 120VAC power with the spring terminals on the right inside the cover. + is conected to 120VAC (hot), L1 is connected to 120VAC (neutral), and L2/N is connected to ground.</p>
+<p>The pump is connected to a 4-20mA control signal using the spring terminals on the left inside the cover. The pump uses 2-10V control, but has a 500 ohm resistor pre-installed which converts the 4-20mA control signal into a 2-10V signal. Vdc is connected to UO5 and COM is connected to the controller COM.</p>
+</section>
+<section id="zone-valves">
+<h2>Zone Valves<a class="headerlink" href="#zone-valves" title="Link to this heading">#</a></h2>
+<p>The zone valves come with pre-installed wire bundles. The red cable is 24VDC (hot), black is 24VDC (ground), orange is the feedback signal (2-10 VDC) and white is the control signal (2-10 VDC).</p>
+</section>
+<section id="temp-sensors">
+<h2>Temp Sensors<a class="headerlink" href="#temp-sensors" title="Link to this heading">#</a></h2>
+<p>The Belimo temp sensors need 2 wires connected to the pos. and neg. spring terminals inside their casings. Either a twisted pair or separate green (pos.) and white (neg.) wires with ferrules are used. The thermistor should be connected similarly, although the direction of current flow doesn’t matter.</p>
+</section>
+<section id="flow-meters">
+<h2>Flow Meters<a class="headerlink" href="#flow-meters" title="Link to this heading">#</a></h2>
+<p>The flow meters must be connected to arduinos to process their signals for the controller. The flow meters output pulses, which are counted over 1 second by the arduino to calculate a flow rate in L/m. The arduino outputs a 0-5V signal with scaling set in the code.</p>
+<p>The flow meters come with female jumper cables, which are connected to the arduinos with 22 awg solid core wire. The red wire connects to 5V, black to ground, and green to D2 (data input).</p>
+<p>22 awg solid core wire is also used to connect the arduinos to power and the controller. Red connects Vin to 24VDC from the terminal block, black connect ground to terminal block ground, green connects A0 (data output) to the controller UI, and white connects ground to the controller COM.</p>
+</section>
+<section id="bacnet-devices">
+<h2>BACNet Devices<a class="headerlink" href="#bacnet-devices" title="Link to this heading">#</a></h2>
+<p>BACNet devices including the power meter and thermostat are daisy-chained to the first bus on the controller. The last device in the chain should have an internal terminal resistor switched on, or an external terminal resistor should be used.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -427,12 +465,21 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="mechanical_assembly.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Mechanical Assembly &amp; Troubleshooting</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="system_overview.html"
+       href="sedona.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">System Overview</p>
+        <p class="prev-next-title">Sedona/EasyIO</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -442,6 +489,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power">Power</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pump">Pump</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zone-valves">Zone Valves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#temp-sensors">Temp Sensors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-meters">Flow Meters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bacnet-devices">BACNet Devices</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
