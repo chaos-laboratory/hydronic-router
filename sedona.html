@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Sedona/EasyIO &#8212; My sample book</title>
+    <title>Sedona/EasyIO &#8212; Hydronic Router Journal</title>
   
   
   
@@ -154,8 +154,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Hydronic Router Journal - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Hydronic Router Journal - Home"/>`);</script>
   
   
 </a></div>
@@ -416,12 +416,12 @@ document.write(`
 <ul class="simple">
 <li><p>With the laptop connected via ethernet to the EasyIO controller and the controller powered on, open cpt.exe from the Windows start menu. Go to the FS-32 tab and select Open on the Hydronic Router app.</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="../images/CPT_Home_Screen.png"><img alt="CPT Home Screen" class="bg-primary mb-1 align-center" src="../images/CPT_Home_Screen.png" style="width: 800px;" />
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/CPT_Home_Screen.png"><img alt="CPT Home Screen" class="bg-primary mb-1 align-center" src="_images/CPT_Home_Screen.png" style="width: 800px;" />
 </a>
 <ul class="simple">
 <li><p>From the home page of the app, 5 folders are visible. The Project folder contains the inputs, outputs, and operations for the hydronic router. The BACnetService folder connects the controller to BACnet devices like the thermostat and power meter. The sqlite3Service hosts the SQL tables which collect data from the router.</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="../images/CPT_App_Home.png"><img alt="CPT App Home" class="bg-primary mb-1 align-center" src="../images/CPT_App_Home.png" style="width: 800px;" />
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/CPT_App_Home.png"><img alt="CPT App Home" class="bg-primary mb-1 align-center" src="_images/CPT_App_Home.png" style="width: 800px;" />
 </a>
 <ul class="simple">
 <li><p>To navigate, double-click on folders or objects to open them. Use the Back arrow at the top left to exit a layer of a folder or object. You can also double-click on folders and objects in the Navigation pane in the top left of the screen.</p></li>
@@ -439,7 +439,7 @@ document.write(`
 <h3>Flow Meters<a class="headerlink" href="#flow-meters" title="Link to this heading">#</a></h3>
 <p>Each FlowX_LPM object displays the zone flow rate in L/min. Background processing of signals from the flow meters is hidden in the FlowMeters folder.</p>
 <p>In the FlowMeters folder, FlowMeterX signals are connected to UI’s 9 through 12 with 0-5 VDC input, and averaged over 10 seconds to smooth the signal. The average is then divided by Const_Flow in each FlowX_LPM object. Const_Flow converts the voltage value to a L/min value, and is equal to 5 divided by the Max Flow Rate value in the Arduino code. This is currently set to 8.0 L/min for a Const_Flow value of 0.625. If the max flow rate is updated in the arduino code, this value must be updated too!</p>
-<a class="bg-primary mb-1 reference internal image-reference" href="../images/CPT_FlowMeters_Folder.png"><img alt="CPT FlowMeters Folder" class="bg-primary mb-1 align-center" src="../images/CPT_FlowMeters_Folder.png" style="width: 800px;" />
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/CPT_FlowMeters_Folder.png"><img alt="CPT FlowMeters Folder" class="bg-primary mb-1 align-center" src="_images/CPT_FlowMeters_Folder.png" style="width: 800px;" />
 </a>
 </section>
 <section id="pump">
@@ -475,17 +475,17 @@ document.write(`
 <ul class="simple">
 <li><p>Double-click the sqlite3Service object in your app to view its wiresheet (under EasyIOFS in Navigation). If you’re using a new app you’ll need to follow the steps in SQLite User Guide to set this up.</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="../images/CPT_SQLiteService.png"><img alt="CPT SQLiteService Wiresheet" class="bg-primary mb-1 align-center" src="../images/CPT_SQLiteService.png" style="width: 800px;" />
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/CPT_SQLiteService.png"><img alt="CPT SQLiteService Wiresheet" class="bg-primary mb-1 align-center" src="_images/CPT_SQLiteService.png" style="width: 800px;" />
 </a>
 <ul class="simple">
 <li><p>Find the easyioFGSql kit in the list of kits in your library. Drag an sqlTable object onto the wiresheet (make sure you’re inside sqlite3Service). Type the table name into the tableNameBuf field. Change the enable field to true (it won’t start recording until later steps). Change recordType, recordInterval, and maxRecord as desired. Double-click on this new table or an existing table to view its wiresheet.</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="../images/CPT_SQLTable.png"><img alt="CPT SQL Table Wiresheet" class="bg-primary mb-1 align-center" src="../images/CPT_SQLTable.png" style="width: 800px;" />
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/CPT_SQLTable.png"><img alt="CPT SQL Table Wiresheet" class="bg-primary mb-1 align-center" src="_images/CPT_SQLTable.png" style="width: 800px;" />
 </a>
 <ul class="simple">
 <li><p>From the easyioFGSql kit in the library, drag your desired data type object onto the wiresheet (you probably want sqlFloat). Type the data point/column name into the columnName field. The columnReady field should change to true when you do this. Right-click the object and select Make Link. Choose the source and the in field of the sql column and select Link. The in field of the column object should now display the data you want to collect.</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="../images/CPT_SQLColumn.png"><img alt="CPT SQL Column Wiresheet" class="bg-primary mb-1 align-center" src="../images/CPT_SQLColumn.png" style="width: 800px;" />
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/CPT_SQLColumn.png"><img alt="CPT SQL Column Wiresheet" class="bg-primary mb-1 align-center" src="_images/CPT_SQLColumn.png" style="width: 800px;" />
 </a>
 <ul class="simple">
 <li><p>Hit the Back arrow or double-click the sqlite3Service object in Navigation to return to its wiresheet. Right-click the table you’re using and hover over Actions. If using a new table, select syncStructure. If using an existing table, select updateStructure. For a new table, the currentRecord field should change from -1 to 0 to show it has started recording. The lastRecorded field will display the last time it recorded so you can check it’s updating correctly. If you go into the table wiresheet and click on one of your columns/data points, the lastRecordedValue will also display the last value it recorded for that column.</p></li>
@@ -497,18 +497,18 @@ document.write(`
 <li><p>Double-click the graphs page under Graphics in Navigation. Here you can see generic, static representations of the graphics displayed in the HTML page for your app. Your library will automatically show the list of graphics kits.</p></li>
 <li><p>For History Line Charts: Drag a HistoryLineChart object onto the wiresheet from the chart kit in your library. Type the name of the table that you want to display data from in the tableName field (this should exactly match the tableName field in the sqlTable object). Type the name of the column you want to display data from in the colNameOfLineX field (again, this should exactly match the columnName field of the column object inside the table you’re referencing).</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="../images/CPT_HistoryLineChart.png"><img alt="CPT History Line Chart" class="bg-primary mb-1 align-center" src="../images/CPT_HistoryLineChart.png" style="width: 800px;" />
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/CPT_HistoryLineChart.png"><img alt="CPT History Line Chart" class="bg-primary mb-1 align-center" src="_images/CPT_HistoryLineChart.png" style="width: 800px;" />
 </a>
 <ul class="simple">
 <li><p>For Meters and other non-history chart graphics: While viewing the graphs wiresheet, find the source of the data you want to display in Navigation and drag it onto the wiresheet. A Create Event Binding pop-up will appear. Select the Meter object from the chart kit, or another graphic object, and hit OK. The inputData field of the object should have a film strip/pencil icon to show that you have successfully connected your data source. Change the minOfRange and maxOfRange fields to fit your data.</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="../images/CPT_Meter_EventBinding.png"><img alt="CPT Meter Event Binding" class="bg-primary mb-1 align-center" src="../images/CPT_Meter_EventBinding.png" style="width: 800px;" />
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/CPT_Meter_EventBinding.png"><img alt="CPT Meter Event Binding" class="bg-primary mb-1 align-center" src="_images/CPT_Meter_EventBinding.png" style="width: 800px;" />
 </a>
 <ul class="simple">
 <li><p>Move and resize graphics by dragging as you would expect, or use the fields inside rect in each object to set position and dimensions.</p></li>
 <li><p>In the top toolbar, select Deploy (clockwise arrow icon) to publish your graphics so they can be viewed. Select OK on the pop-up. Once the files have been uploaded you can select Preview in the top toolbar (blue flag icon) to view your graphics in a webpage. The username and password if needed are admin and hellocpt.</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="../images/CPT_Graphics.png"><img alt="CPT Graphics Webpage" class="bg-primary mb-1 align-center" src="../images/CPT_Graphics.png" style="width: 800px;" />
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/CPT_Graphics.png"><img alt="CPT Graphics Webpage" class="bg-primary mb-1 align-center" src="_images/CPT_Graphics.png" style="width: 800px;" />
 </a>
 <ul class="simple">
 <li><p>Select the time range of data you want to view using the dropdown menu on each History Line Chart, or select the range you want with your cursor. The y-axis is scaled automatically to the min and max values of all data in that table. Meter graphics update in real-time, but to display new History Line Chart data you will need to reload the page.</p></li>
@@ -519,7 +519,7 @@ document.write(`
 <ul class="simple">
 <li><p>In the webpage view of your graphics, select the Utilities button on the left-hand side and then DB Manager. Use the menu on the left of the new page that pops up to navigate the database and the tables stored in it.</p></li>
 </ul>
-<a class="bg-primary mb-1 reference internal image-reference" href="../images/CPT_DBManager.png"><img alt="CPT Database Manager Webpage" class="bg-primary mb-1 align-center" src="../images/CPT_DBManager.png" style="width: 800px;" />
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/CPT_DBManager.png"><img alt="CPT Database Manager Webpage" class="bg-primary mb-1 align-center" src="_images/CPT_DBManager.png" style="width: 800px;" />
 </a>
 <ul class="simple">
 <li><p>To edit or delete data in on your tables, select the table, select the rows you’re changing using the parameters at the top, and hit Show. Select Edit on a row to manually change its recorded values, or Delete to delete a whole row. This is useful if you have erroneous data messing up the y-axis scale on your graphics.</p></li>
@@ -616,7 +616,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Ariane Adcroft
 </p>
 
   </div>

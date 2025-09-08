@@ -2,14 +2,14 @@
 ## Hydronic Router App
 ### Getting Started
 * With the laptop connected via ethernet to the EasyIO controller and the controller powered on, open cpt.exe from the Windows start menu. Go to the FS-32 tab and select Open on the Hydronic Router app.
-```{image} ../images/CPT_Home_Screen.png
+```{image} ./images/CPT_Home_Screen.png
 :alt: CPT Home Screen
 :class: bg-primary mb-1
 :width: 800px
 :align: center
 ```
 * From the home page of the app, 5 folders are visible. The Project folder contains the inputs, outputs, and operations for the hydronic router. The BACnetService folder connects the controller to BACnet devices like the thermostat and power meter. The sqlite3Service hosts the SQL tables which collect data from the router. 
-```{image} ../images/CPT_App_Home.png
+```{image} ./images/CPT_App_Home.png
 :alt: CPT App Home
 :class: bg-primary mb-1
 :width: 800px
@@ -28,7 +28,7 @@ The ZoneValveX control signals are connected to UO’s 1 through 4 with 2-10 VDC
 Each FlowX_LPM object displays the zone flow rate in L/min. Background processing of signals from the flow meters is hidden in the FlowMeters folder.
 
 In the FlowMeters folder, FlowMeterX signals are connected to UI’s 9 through 12 with 0-5 VDC input, and averaged over 10 seconds to smooth the signal. The average is then divided by Const_Flow in each FlowX_LPM object. Const_Flow converts the voltage value to a L/min value, and is equal to 5 divided by the Max Flow Rate value in the Arduino code. This is currently set to 8.0 L/min for a Const_Flow value of 0.625. If the max flow rate is updated in the arduino code, this value must be updated too! 
-```{image} ../images/CPT_FlowMeters_Folder.png
+```{image} ./images/CPT_FlowMeters_Folder.png
 :alt: CPT FlowMeters Folder
 :class: bg-primary mb-1
 :width: 800px
@@ -67,21 +67,21 @@ The set points are WriteFloat objects that can be changed to the desired set poi
 ## Data Collection
 ### Recording a new data point:
 * Double-click the sqlite3Service object in your app to view its wiresheet (under EasyIOFS in Navigation). If you’re using a new app you’ll need to follow the steps in SQLite User Guide to set this up.
-```{image} ../images/CPT_SQLiteService.png
+```{image} ./images/CPT_SQLiteService.png
 :alt: CPT SQLiteService Wiresheet
 :class: bg-primary mb-1
 :width: 800px
 :align: center
 ```
 * Find the easyioFGSql kit in the list of kits in your library. Drag an sqlTable object onto the wiresheet (make sure you’re inside sqlite3Service). Type the table name into the tableNameBuf field. Change the enable field to true (it won’t start recording until later steps). Change recordType, recordInterval, and maxRecord as desired. Double-click on this new table or an existing table to view its wiresheet.
-```{image} ../images/CPT_SQLTable.png
+```{image} ./images/CPT_SQLTable.png
 :alt: CPT SQL Table Wiresheet
 :class: bg-primary mb-1
 :width: 800px
 :align: center
 ```
 * From the easyioFGSql kit in the library, drag your desired data type object onto the wiresheet (you probably want sqlFloat). Type the data point/column name into the columnName field. The columnReady field should change to true when you do this. Right-click the object and select Make Link. Choose the source and the in field of the sql column and select Link. The in field of the column object should now display the data you want to collect.
-```{image} ../images/CPT_SQLColumn.png
+```{image} ./images/CPT_SQLColumn.png
 :alt: CPT SQL Column Wiresheet
 :class: bg-primary mb-1
 :width: 800px
@@ -92,14 +92,14 @@ The set points are WriteFloat objects that can be changed to the desired set poi
 ### Viewing data graphically:
 * Double-click the graphs page under Graphics in Navigation. Here you can see generic, static representations of the graphics displayed in the HTML page for your app. Your library will automatically show the list of graphics kits.
 * For History Line Charts: Drag a HistoryLineChart object onto the wiresheet from the chart kit in your library. Type the name of the table that you want to display data from in the tableName field (this should exactly match the tableName field in the sqlTable object). Type the name of the column you want to display data from in the colNameOfLineX field (again, this should exactly match the columnName field of the column object inside the table you’re referencing).
-```{image} ../images/CPT_HistoryLineChart.png
+```{image} ./images/CPT_HistoryLineChart.png
 :alt: CPT History Line Chart
 :class: bg-primary mb-1
 :width: 800px
 :align: center
 ```
 * For Meters and other non-history chart graphics: While viewing the graphs wiresheet, find the source of the data you want to display in Navigation and drag it onto the wiresheet. A Create Event Binding pop-up will appear. Select the Meter object from the chart kit, or another graphic object, and hit OK. The inputData field of the object should have a film strip/pencil icon to show that you have successfully connected your data source. Change the minOfRange and maxOfRange fields to fit your data.
-```{image} ../images/CPT_Meter_EventBinding.png
+```{image} ./images/CPT_Meter_EventBinding.png
 :alt: CPT Meter Event Binding
 :class: bg-primary mb-1
 :width: 800px
@@ -107,7 +107,7 @@ The set points are WriteFloat objects that can be changed to the desired set poi
 ```
 * Move and resize graphics by dragging as you would expect, or use the fields inside rect in each object to set position and dimensions.
 * In the top toolbar, select Deploy (clockwise arrow icon) to publish your graphics so they can be viewed. Select OK on the pop-up. Once the files have been uploaded you can select Preview in the top toolbar (blue flag icon) to view your graphics in a webpage. The username and password if needed are admin and hellocpt.
-```{image} ../images/CPT_Graphics.png
+```{image} ./images/CPT_Graphics.png
 :alt: CPT Graphics Webpage
 :class: bg-primary mb-1
 :width: 800px
@@ -117,7 +117,7 @@ The set points are WriteFloat objects that can be changed to the desired set poi
 
 ### Managing recorded data:
 * In the webpage view of your graphics, select the Utilities button on the left-hand side and then DB Manager. Use the menu on the left of the new page that pops up to navigate the database and the tables stored in it. 
-```{image} ../images/CPT_DBManager.png
+```{image} ./images/CPT_DBManager.png
 :alt: CPT Database Manager Webpage
 :class: bg-primary mb-1
 :width: 800px
