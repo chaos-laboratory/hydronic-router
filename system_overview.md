@@ -8,7 +8,7 @@ The hydronic router includes devices to control and collect data on 4 zones with
 :width: 600px
 :align: center
 ```
-An EasyIO FS-32 controller is integrated into the system to allow user-designed control loops to be tested on the on the components. The radiant panel, coil (with fan, forming a fan-coil unit), and radiant slab have all been implemented in the chamber as of 8/18/2025 with plumbing in place to allow a thermal storage tank or other component to be attached. 
+An EasyIO FS-32 controller is integrated into the system to allow user-designed control loops to be tested on the on the components. The radiant panel, coil (with fan, forming a fan-coil unit), and radiant slab have all been implemented in the chamber with plumbing in place to allow a thermal storage tank or other fourth component to be attached. 
 
 Measured variables for the system are:
 - Inlet water temp
