@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sedona/EasyIO &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sedona';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Wiring" href="wiring.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Hydronic Router
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="system_overview.html">System Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mechanical_assembly.html">Mechanical Assembly &amp; Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wiring.html">Wiring</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sedona/EasyIO</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fsedona.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/sedona.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sedona/EasyIO</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hydronic-router-app">Hydronic Router App</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zone-valves">Zone Valves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-meters">Flow Meters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pump">Pump</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-temperature-humidity">Power, Temperature, &amp; Humidity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fan">Fan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-points-pid-loops">Set Points &amp; PID Loops</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">Data Collection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-a-new-data-point">Recording a new data point:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-data-graphically">Viewing data graphically:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-recorded-data">Managing recorded data:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sedona-easyio">
+<h1>Sedona/EasyIO<a class="headerlink" href="#sedona-easyio" title="Link to this heading">#</a></h1>
+<section id="hydronic-router-app">
+<h2>Hydronic Router App<a class="headerlink" href="#hydronic-router-app" title="Link to this heading">#</a></h2>
+<section id="getting-started">
+<h3>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h3>
+<p>With the laptop connected via ethernet to the EasyIO controller and the controller powered on, open cpt.exe from the Windows start menu. Go to the FS-32 tab and select Open on the Hydronic Router app. Picture: CPT_Home_Screen.png
+From the home page of the app, 5 folders are visible. The Project folder contains the inputs, outputs, and operations for the hydronic router. The BACnetService folder connects the controller to BACnet devices like the thermostat and power meter. The sqlite3Service hosts the SQL tables which collect data from the router. Picture: CPT_App_Home.png
+To navigate, double-click on folders or objects to open them. Use the Back arrow at the top left to exit a layer of a folder or object. You can also double-click on folders and objects in the Navigation pane in the top left of the screen.
+To create objects, drag them onto the wiresheet from the kits in the Library pane in the bottom left of the screen. Edit them with the Properties pane on the right of the screen, and tab to the Links pane at the bottom to view links. The objects will automatically be listed in the Navigation pane in the order they are created. Carefully drag object names in this pane to reorder them without accidentally nesting them.
+To select objects, drag to highlight on the wiresheet or hold down Ctrl while selecting objects. You can’t select multiple objects at once in the Navigation pane.
+To create links, click and drag between fields on objects in the same wiresheet. For objects on different wiresheets, right-click an object and select Make Link, or select the object and press Ctrl+L. This will bring up a Make Link pop-up where you can choose the fields you want to connect and select Link.
+To nest objects, drag an object onto another on the wiresheet, or drag the object name in the Navigation pane onto another object name. Links into the nested components are usually preserved, as are links between components if multiple components are nested together. Links out of the nested components will have to be re-created.</p>
+</section>
+<section id="zone-valves">
+<h3>Zone Valves<a class="headerlink" href="#zone-valves" title="Link to this heading">#</a></h3>
+<p>The ZoneValveX control signals are connected to UO’s 1 through 4 with 2-10 VDC output. The ZoneFeedbackX signals are connected to UI’s 1 through 4 with 2-10 VDC input. They show the real-time position of the zone valve actuators and are connected to logic in the Pump folder, preventing the pump from turning on without at least one zone valve open.</p>
+</section>
+<section id="flow-meters">
+<h3>Flow Meters<a class="headerlink" href="#flow-meters" title="Link to this heading">#</a></h3>
+<p>Each FlowX_LPM object displays the zone flow rate in L/min. Background processing of signals from the flow meters is hidden in the FlowMeters folder.</p>
+<p>In the FlowMeters folder, FlowMeterX signals are connected to UI’s 9 through 12 with 0-5 VDC input, and averaged over 10 seconds to smooth the signal. The average is then divided by Const_Flow in each FlowX_LPM object. Const_Flow converts the voltage value to a L/min value, and is equal to 5 divided by the Max Flow Rate value in the Arduino code. This is currently set to 8.0 L/min for a Const_Flow value of 0.625. If the max flow rate is updated in the arduino code, this value must be updated too!</p>
+</section>
+<section id="pump">
+<h3>Pump<a class="headerlink" href="#pump" title="Link to this heading">#</a></h3>
+<p>PumpInput is a WriteFloat which holds the 4-20mA control signal value to be delivered to the pump. The background logic to prevent the pump from turning on when it shouldn’t is hidden in the Pump folder.</p>
+<p>In the Pump folder, the FloatSwitch connected to UI5 detects whether the water level is higher than the outlet of the Chilled Water Tank and outputs true if this is true. The ZoneX_Open objects compare the ZoneFeedbackX values to a threshold of 2.05 to determine if each zone is open. AnyZoneOpen outputs true if at least on of the four zones is open. PumpConditions outputs true if both the water level and zone open conditions are met, switching the output of PumpSwitch from 0 to the PumpInput value. This is connected to UO5 to control the pump with a 4-20mA output.</p>
+</section>
+<section id="power-temperature-humidity">
+<h3>Power, Temperature, &amp; Humidity<a class="headerlink" href="#power-temperature-humidity" title="Link to this heading">#</a></h3>
+<p>Power, AirTemp, and RelHumidity are WriteFloat objects that display values communicated via BACnet from the power meter and thermostat.</p>
+<p>In the TempSensors folder, the TempIn signal is connected to UI7, the TempOutX signals are connected to UI’s 13 through 16, and the ObjTemp (thermistor) signal is connected to UI6. These resistance input values are averaged over 10 seconds to smooth the signals. In the Project folder, TempIn_C, TempOutX_C, and ObjTemp_C are Linearize objects that convert the resistance value to a temperature in celsius using a curve for 10k2 thermistors from Belimo.</p>
+</section>
+<section id="fan">
+<h3>Fan<a class="headerlink" href="#fan" title="Link to this heading">#</a></h3>
+<p>The Fan control signal is connected to UO7 with 0-10 VDC output.</p>
+<p>In the AirFlow folder, the PressureSensor is connected to UI8 with a 0-10 VDC input signal, and averaged over 15 seconds to smooth the signal. In the Project folder, the average is divided by Const_Pressure to convert from voltage to pressure in StaticPressure. Const_Pressure is determined by the pressure sensor range setting, set with the white dial inside the case.</p>
+<p>The AirFlow folder also contains StaticToVelocity which multiples the StaticPressure value by Const_Bernoulli for the first step in converting from static pressure to air velocity. Const_Bernoulli is equal to 2 divided by the air density in kg/m^3. In the Project folder, AirVelocity_MPS takes the square root of the StaticToVelocity output to display the air velocity in m/s.</p>
+<p>These conversions from static pressure to velocity are derived from the Bernoulli Equation:
+<span class="math notranslate nohighlight">\(P_1 + \frac12 \rho v_1^2 + \rho g h_1 = P_2 + \frac12 \rho v_2^2 + \rho g h_2\)</span>
+<span class="math notranslate nohighlight">\(h_1 = h_2, v_2 = 0,  P_s = P_2 - P_1\)</span>
+<span class="math notranslate nohighlight">\(P_s =  \frac12 \rho v_1^2\)</span>
+<span class="math notranslate nohighlight">\(v_1 = \sqrt{\frac{2P_s}{\rho}}\)</span></p>
+</section>
+<section id="set-points-pid-loops">
+<h3>Set Points &amp; PID Loops<a class="headerlink" href="#set-points-pid-loops" title="Link to this heading">#</a></h3>
+<p>The set points are WriteFloat objects that can be changed to the desired set point value and connected to the PID Loops setPoint fields. The in fields of the PID loops can be connected to a temperature or humidity output value, and the out fields connected to the in fields of Fan, PumpInput, or a ZoneValve object. New PID Loops can be created from the EasyIO Energy kit.</p>
+</section>
+</section>
+<section id="data-collection">
+<h2>Data Collection<a class="headerlink" href="#data-collection" title="Link to this heading">#</a></h2>
+<section id="recording-a-new-data-point">
+<h3>Recording a new data point:<a class="headerlink" href="#recording-a-new-data-point" title="Link to this heading">#</a></h3>
+<p>Double-click the sqlite3Service object in your app to view its wiresheet (under EasyIOFS in Navigation). If you’re using a new app you’ll need to follow the steps in SQLite User Guide to set this up.
+Find the easyioFGSql kit in the list of kits in your library. Drag an sqlTable object onto the wiresheet (make sure you’re inside sqlite3Service). Type the table name into the tableNameBuf field. Change the enable field to true (it won’t start recording until later steps). Change recordType, recordInterval, and maxRecord as desired. Double-click on this new table or an existing table to view its wiresheet.
+From the easyioFGSql kit in the library, drag your desired data type object onto the wiresheet (you probably want sqlFloat). Type the data point/column name into the columnName field. The columnReady field should change to true when you do this. Right-click the object and select Make Link. Choose the source and the in field of the sql column and select Link. The in field of the column object should now display the data you want to collect.
+Hit the Back arrow or double-click the sqlite3Service object in Navigation to return to its wiresheet. Right-click the table you’re using and hover over Actions. If using a new table, select syncStructure. If using an existing table, select updateStructure. For a new table, the currentRecord field should change from -1 to 0 to show it has started recording. The lastRecorded field will display the last time it recorded so you can check it’s updating correctly. If you go into the table wiresheet and click on one of your columns/data points, the lastRecordedValue will also display the last value it recorded for that column.</p>
+</section>
+<section id="viewing-data-graphically">
+<h3>Viewing data graphically:<a class="headerlink" href="#viewing-data-graphically" title="Link to this heading">#</a></h3>
+<p>Double-click the graphs page under Graphics in Navigation. Here you can see generic, static representations of the graphics displayed in the HTML page for your app. Your library will automatically show the list of graphics kits.
+For History Line Charts: Drag a HistoryLineChart object onto the wiresheet from the chart kit in your library. Type the name of the table that you want to display data from in the tableName field (this should exactly match the tableName field in the sqlTable object). Type the name of the column you want to display data from in the colNameOfLineX field (again, this should exactly match the columnName field of the column object inside the table you’re referencing).
+For Meters and other non-history chart graphics: While viewing the graphs wiresheet, find the source of the data you want to display in Navigation and drag it onto the wiresheet. A Create Event Binding pop-up will appear. Select the Meter object from the chart kit, or another graphic object, and hit OK. The inputData field of the object should have a film strip/pencil icon to show that you have successfully connected your data source. Change the minOfRange and maxOfRange fields to fit your data.
+Move and resize graphics by dragging as you would expect, or use the fields inside rect in each object to set position and dimensions.
+In the top toolbar, select Deploy (clockwise arrow icon) to publish your graphics so they can be viewed. Select OK on the pop-up. Once the files have been uploaded you can select Preview in the top toolbar (blue flag icon) to view your graphics in a webpage. The username and password if needed are admin and hellocpt.
+Select the time range of data you want to view using the dropdown menu on each History Line Chart, or select the range you want with your cursor. The y-axis is scaled automatically to the min and max values of all data in that table. Meter graphics update in real-time, but to display new History Line Chart data you will need to reload the page.</p>
+</section>
+<section id="managing-recorded-data">
+<h3>Managing recorded data:<a class="headerlink" href="#managing-recorded-data" title="Link to this heading">#</a></h3>
+<p>In the webpage view of your graphics, select the Utilities button on the left-hand side and then DB Manager. Use the menu on the left of the new page that pops up to navigate the database and the tables stored in it.
+To edit or delete data in on your tables, select the table, select the rows you’re changing using the parameters at the top, and hit Show. Select Edit on a row to manually change its recorded values, or Delete to delete a whole row. This is useful if you have erroneous data messing up the y-axis scale on your graphics.
+To download the data from your tables, select Export from the tabs at the top and choose the table, download type, and filename before hitting Export to download it.
+To empty your tables (which can help you avoid re-downloading the same data in the future) select the database (easyio.db) from the left menu. In the Structure tab select Empty next to the table you want to clear the data from.
+To delete a table, select Drop next to the table in the Structure tab of the database (same as above).</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="wiring.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Wiring</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hydronic-router-app">Hydronic Router App</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zone-valves">Zone Valves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-meters">Flow Meters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pump">Pump</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#power-temperature-humidity">Power, Temperature, &amp; Humidity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fan">Fan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-points-pid-loops">Set Points &amp; PID Loops</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection">Data Collection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recording-a-new-data-point">Recording a new data point:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-data-graphically">Viewing data graphically:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-recorded-data">Managing recorded data:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
